@@ -20,30 +20,14 @@
             padding: 100px 0;
         }
 
-        #bg-container { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            z-index: -1; 
-            background: #000; 
-            overflow: hidden; 
-        }
+        #bg-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #000; overflow: hidden; }
         
         .bg-slide {
-            position: absolute; 
-            inset: 0; 
-            background-size: cover; 
-            background-position: center;
-            opacity: 0; 
-            transition: opacity 2s ease-in-out;
+            position: absolute; inset: 0; background-size: cover; background-position: center;
+            opacity: 0; transition: opacity 2s ease-in-out;
         }
 
-        .bg-slide.active { 
-            opacity: 1; 
-            animation: fadeZoomOut 8s ease-in-out forwards; 
-        }
+        .bg-slide.active { opacity: 1; animation: fadeZoomOut 8s ease-in-out forwards; }
 
         @keyframes fadeZoomOut {
             0% { transform: scale(1); opacity: 0; }
@@ -52,12 +36,7 @@
             100% { transform: scale(1.1); opacity: 0; }
         }
 
-        #bg-overlay { 
-            position: absolute; 
-            inset: 0; 
-            background: rgba(0, 0, 0, 0.6); 
-            z-index: 1; 
-        }
+        #bg-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6); z-index: 1; }
 
         .glass { backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .hero-title { font-size: clamp(2.5rem, 8vw, 7rem); line-height: 0.9; font-weight: 800; letter-spacing: -0.04em; }
@@ -95,60 +74,16 @@
             padding: 120px 24px;
             min-height: 100vh;
         }
+        body.dark #manifesto-section, body.dark #roadmap-section { background: #000; }
+        body.light #manifesto-section, body.light #roadmap-section { background: #fff; }
 
-        .tech-ticker {
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 20px 0;
-            background: rgba(59, 130, 246, 0.03);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            margin: 40px 0;
-        }
-        .ticker-content {
-            display: inline-block;
-            animation: ticker 30s linear infinite;
-            font-family: monospace;
-            font-size: 12px;
-            color: #3b82f6;
-            opacity: 0.5;
-        }
-        @keyframes ticker {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        #drawer { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); transform: translateX(100%); z-index: 100; position: fixed; top: 0; right: 0; height: 100%; width: 100%; }
-        @media (min-width: 768px) { #drawer { width: 500px; } }
+        #drawer { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); transform: translateX(100%); z-index: 100; }
         #drawer.open { transform: translateX(0); }
 
-        .progress-container { 
-            background: rgba(255,255,255,0.1); 
-            border-radius: 99px; 
-            height: 6px; 
-            width: 100%; 
-            position: relative;
-            margin: 20px 0;
-        }
-        .progress-fill { 
-            background: #3b82f6; 
-            height: 100%; 
-            position: relative;
-            transition: width 1.5s ease-in-out;
-            border-radius: 99px;
-        }
-        .progress-circle {
-            position: absolute;
-            right: -6px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 14px;
-            height: 14px;
-            background: #3b82f6;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #3b82f6;
-        }
+        .progress-container { background: rgba(255,255,255,0.05); border-radius: 99px; height: 8px; width: 100%; overflow: hidden; }
+        .progress-fill { background: #3b82f6; height: 100%; transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        .status-tag { font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 800; border: 1px solid currentColor; }
     </style>
 </head>
 <body class="dark">
@@ -252,78 +187,75 @@
         </div>
     </section>
 
-    <div class="tech-ticker">
-        <div class="ticker-content">
-            SYS_INIT // X: 104.2 Y: 89.4 Z: 12.1 // KERNEL_LOAD_01 // PIDI_LEXER_ATTACHED // ENERGY_FLUX: 5.4% // 0xAF4401 // NEURAL_LINK_STABLE // RAW_DATA_STREAM_ON // BYPASS_QUALIFICATION_PROTOCOLS // CREATE_THE_FUTURE // SYS_INIT // X: 104.2 Y: 89.4 Z: 12.1 // KERNEL_LOAD_01 // PIDI_LEXER_ATTACHED // ENERGY_FLUX: 5.4% // 0xAF4401 // NEURAL_LINK_STABLE // RAW_DATA_STREAM_ON // BYPASS_QUALIFICATION_PROTOCOLS // CREATE_THE_FUTURE
-        </div>
-    </div>
-
     <section id="roadmap-section">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter">SYSTEM <span class="text-blue-500">STATUS</span></h2>
             
-            <div class="grid grid-cols-1 gap-12">
+            <div class="grid grid-cols-1 gap-6">
                 <div class="p-8 glass rounded-3xl">
-                    <div class="flex justify-between items-center mb-2">
+                    <div class="flex justify-between items-center mb-4">
                         <h4 class="text-xl font-bold uppercase tracking-widest">Project: Robotic Avatar</h4>
-                        <span class="text-blue-500 font-black">40%</span>
+                        <span class="status-tag text-blue-500">40% CAPACITY</span>
                     </div>
-                    <div class="progress-container">
-                        <div class="progress-fill" style="width: 40%">
-                            <div class="progress-circle"></div>
-                        </div>
+                    <div class="progress-container mb-6">
+                        <div class="progress-fill" style="width: 40%"></div>
                     </div>
-                    <ul class="text-sm opacity-60 flex flex-col gap-3 mt-4">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Skeleton frame assembly complete.</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Basic actuator testing initiated.</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Manual control bridge in testing phase.</li>
+                    <ul class="text-sm opacity-60 flex flex-col gap-2 font-mono">
+                        <li>• Skeleton frame assembly complete.</li>
+                        <li>• Basic actuator testing initiated.</li>
+                        <li>• Manual control bridge in testing phase.</li>
                     </ul>
                 </div>
 
                 <div class="p-8 glass rounded-3xl">
-                    <div class="flex justify-between items-center mb-2">
+                    <div class="flex justify-between items-center mb-4">
                         <h4 class="text-xl font-bold uppercase tracking-widest">Project: Pidilang</h4>
-                        <span class="text-blue-400 font-black">10%</span>
+                        <span class="status-tag text-blue-400">10% CAPACITY</span>
                     </div>
-                    <div class="progress-container">
-                        <div class="progress-fill" style="width: 10%">
-                            <div class="progress-circle"></div>
-                        </div>
+                    <div class="progress-container mb-6">
+                        <div class="progress-fill" style="width: 10%"></div>
                     </div>
-                    <ul class="text-sm opacity-60 flex flex-col gap-3 mt-4">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span> Lexer logic mapping started.</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span> Keyword reservation for local syntax in progress.</li>
+                    <ul class="text-sm opacity-60 flex flex-col gap-2 font-mono">
+                        <li>• Lexer logic mapping started.</li>
+                        <li>• Keyword reservation for local syntax in progress.</li>
                     </ul>
                 </div>
 
                 <div class="p-8 glass rounded-3xl">
-                    <div class="flex justify-between items-center mb-2">
+                    <div class="flex justify-between items-center mb-4">
                         <h4 class="text-xl font-bold uppercase tracking-widest">Project: Energy Labs</h4>
-                        <span class="text-blue-300 font-black">5%</span>
+                        <span class="status-tag text-blue-300">5% CAPACITY</span>
                     </div>
-                    <div class="progress-container">
-                        <div class="progress-fill" style="width: 5%">
-                            <div class="progress-circle"></div>
-                        </div>
+                    <div class="progress-container mb-6">
+                        <div class="progress-fill" style="width: 5%"></div>
                     </div>
-                    <ul class="text-sm opacity-60 flex flex-col gap-3 mt-4">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-300 rounded-full"></span> Theoretical research for clean storage models.</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-300 rounded-full"></span> Initial drafting of low-loss transmission systems.</li>
+                    <ul class="text-sm opacity-60 flex flex-col gap-2 font-mono">
+                        <li>• Theoretical research for clean storage models.</li>
+                        <li>• Initial drafting of low-loss transmission systems.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="drawer" class="glass bg-black/95 p-8 md:p-12 flex flex-col overflow-y-auto">
+    <div id="drawer" class="fixed top-0 right-0 h-full w-full md:w-[500px] glass bg-black/95 p-8 md:p-12 flex flex-col overflow-y-auto">
         <button onclick="toggleDrawer()" class="self-end text-3xl mb-8 text-white hover:text-blue-500 transition">✕</button>
         <div class="text-white">
             <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter">Contact FR<span class="text-blue-500">i</span>O</h2>
-            <form action="https://formspree.io/f/mkooopwj" method="POST" class="flex flex-col gap-6">
-                <input type="text" name="name" placeholder="Full Name" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition">
-                <input type="email" name="email" placeholder="Email Address" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition">
-                <textarea name="vision" placeholder="Describe your technical contribution..." rows="5" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition resize-none"></textarea>
-                <button type="submit" class="bg-blue-600 text-white py-5 rounded-2xl font-bold uppercase tracking-widest hover:bg-blue-500 transition">Transmit Data</button>
+            <form id="frio-form" action="https://formspree.io/f/mkooopwj" method="POST" class="flex flex-col gap-6">
+                <div class="flex flex-col gap-2">
+                    <label class="text-[10px] uppercase tracking-widest text-blue-500 font-bold">Identification</label>
+                    <input type="text" name="name" placeholder="Full Name" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-[10px] uppercase tracking-widest text-blue-500 font-bold">Communication</label>
+                    <input type="email" name="email" placeholder="Email Address" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="text-[10px] uppercase tracking-widest text-blue-500 font-bold">The Vision</label>
+                    <textarea name="vision" placeholder="Describe your technical contribution..." rows="5" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition resize-none"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white py-5 rounded-2xl font-bold uppercase tracking-widest hover:bg-blue-500 transform hover:scale-[1.02] transition shadow-lg shadow-blue-900/20">Transmit Data</button>
             </form>
         </div>
     </div>
@@ -332,44 +264,42 @@
         const darkImages = ['https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2000','https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000','https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000'];
         const lightImages = ['https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000','https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2000','https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2000'];
         let currentIdx = 0;
-
+        const wrapper = document.getElementById('slides-wrapper');
+        
         function updateSlides() {
             const isDark = document.body.classList.contains('dark');
             const set = isDark ? darkImages : lightImages;
-            const wrapper = document.getElementById('slides-wrapper');
-‎            wrapper.innerHTML = '';
-‎            set.forEach((src, i) => {
-‎                const div = document.createElement('div');
-‎                div.className = `bg-slide ${i === currentIdx ? 'active' : ''}`;
-‎                div.style.backgroundImage = `url('${src}')`;
-‎                wrapper.appendChild(div);
-‎            });
-‎        }
-‎
-‎        function cycleSlides() {
-‎            const slides = document.querySelectorAll('.bg-slide');
-‎            if (slides.length > 0) {
-‎                slides[currentIdx].classList.remove('active');
-‎                currentIdx = (currentIdx + 1) % slides.length;
-‎                slides[currentIdx].classList.add('active');
-‎            }
-‎        }
-‎        setInterval(cycleSlides, 8000);
-‎
-‎        function toggleTheme() {
-‎            document.body.classList.toggle('dark');
-‎            document.body.classList.toggle('light');
-‎            const dot = document.getElementById('theme-dot');
-‎            dot.style.transform = document.body.classList.contains('light') ? 'translateX(20px)' : 'translateX(0)';
-‎            updateSlides();
-‎        }
-‎
-‎        function toggleDrawer() {
-‎            const drawer = document.getElementById('drawer');
-‎            drawer.classList.toggle('open');
-‎        }
-‎
-‎        updateSlides();
-‎    </script>
-‎</body>
-‎</html>
+            wrapper.innerHTML = '';
+            set.forEach((src, i) => {
+                const div = document.createElement('div');
+                div.className = `bg-slide ${i === 0 ? 'active' : ''}`;
+                div.style.backgroundImage = `url('${src}')`;
+                wrapper.appendChild(div);
+            });
+        }
+
+        setInterval(() => {
+            const slides = document.querySelectorAll('.bg-slide');
+            if (slides.length) {
+                slides[currentIdx].classList.remove('active');
+                currentIdx = (currentIdx + 1) % slides.length;
+                slides[currentIdx].classList.add('active');
+            }
+        }, 8000);
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            document.body.classList.toggle('light');
+            const dot = document.getElementById('theme-dot');
+            dot.style.transform = document.body.classList.contains('light') ? 'translateX(20px)' : 'translateX(0)';
+            updateSlides();
+        }
+
+        function toggleDrawer() {
+            document.getElementById('drawer').classList.toggle('open');
+        }
+
+        updateSlides();
+    </script>
+</body>
+                        </html>
