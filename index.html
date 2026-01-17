@@ -68,18 +68,21 @@
             .grid-card p { font-size: 10px; line-height: 1.3; }
         }
 
-        #manifesto-section {
+        #manifesto-section, #roadmap-section {
             position: relative;
             z-index: 10;
             padding: 120px 24px;
             min-height: 100vh;
-            box-shadow: 0 -30px 60px rgba(0,0,0,0.8);
         }
-        body.dark #manifesto-section { background: #000; }
-        body.light #manifesto-section { background: #fff; }
+        body.dark #manifesto-section, body.dark #roadmap-section { background: #000; }
+        body.light #manifesto-section, body.light #roadmap-section { background: #fff; }
 
         #drawer { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); transform: translateX(100%); z-index: 100; }
         #drawer.open { transform: translateX(0); }
+
+        /* Progress Bar Styles */
+        .progress-container { background: rgba(255,255,255,0.05); border-radius: 99px; height: 8px; width: 100%; overflow: hidden; }
+        .progress-fill { background: #3b82f6; height: 100%; transition: width 1s ease-in-out; }
     </style>
 </head>
 <body class="dark">
@@ -124,7 +127,6 @@
                     <h3 class="text-blue-500 font-bold mb-3 uppercase text-xs tracking-widest">The Mission</h3>
                     <p class="text-sm opacity-80 leading-relaxed">Creating the physical tools for a limitless tomorrow. We don't build for a specific year; we build for the era where humans and machines explore the unreachable together, breaking every boundary in our path.</p>
                 </div>
-
                 <div class="glass grid-card text-white">
                     <h3 class="text-blue-400 font-bold mb-3 uppercase text-xs tracking-widest">Kinematics</h3>
                     <p class="text-sm opacity-80 leading-relaxed">Mastery of mechanics relating to motion. We study the complex physics of movement to ensure our humanoid avatars move with the fluid grace and balance of a living being, conquering rough terrain with ease.</p>
@@ -137,7 +139,6 @@
                     <h3 class="text-blue-400 font-bold mb-3 uppercase text-xs tracking-widest">Blueprints</h3>
                     <p class="text-sm opacity-80 leading-relaxed">Precision technical drawing and architectural blueprints. We map out the impossible on paper before we breathe life into it with steel and silicon, ensuring every millimeter is accounted for.</p>
                 </div>
-
                 <div class="glass grid-card text-white">
                     <h3 class="text-blue-300 font-bold mb-3 uppercase text-xs tracking-widest">3D Modeling</h3>
                     <p class="text-sm opacity-80 leading-relaxed">High-fidelity 3D design. We create digital twins of our prototypes, refining every joint and casing in a virtual space before the first physical bolt is turned, ensuring aesthetic and functional perfection.</p>
@@ -157,36 +158,79 @@
     <section id="manifesto-section">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter">THE <span class="text-blue-500">MANIFESTO</span></h2>
-            
             <div class="grid grid-cols-1 gap-12">
                 <div class="p-10 glass rounded-3xl border-l-4 border-blue-500">
                     <h4 class="text-3xl font-black uppercase mb-4 tracking-tight">The Robotic Avatar</h4>
                     <p class="opacity-70 text-lg leading-relaxed">
-                        Currently in development. A humanoid system designed to bridge the gap between human intent and mechanical execution, controlled via intuitive gamepad interface. Built from the ground up to reach places traditional exploration cannot, the Avatar is the ultimate physical extension of the human mind, capable of operating in environments too dangerous or remote for biological forms.
+                        Currently in development. A humanoid system designed to bridge the gap between human intent and mechanical execution, controlled via intuitive gamepad interface. Built from the ground up to reach places traditional exploration cannot, the Avatar is the ultimate physical extension of the human mind.
                     </p>
                 </div>
-
                 <div class="p-10 glass rounded-3xl border-l-4 border-blue-500">
                     <h4 class="text-3xl font-black uppercase mb-4 tracking-tight text-blue-400">Pidilang</h4>
                     <p class="opacity-70 text-lg leading-relaxed mb-6">
-                        A programming language based on Pidgin currently in development to bridge the gap between the use of English and local languages and expand reach. By localizing syntax and logic structures, we are democratizing the ability to create technology, ensuring that the "gift of the mind" is never hindered by a language barrier. This is the bridge to a truly inclusive technical future.
+                        A programming language based on Pidgin currently in development to bridge the gap between the use of English and local languages and expand reach. By localizing syntax and logic structures, we are democratizing the ability to create technology.
                     </p>
                     <a href="https://friomademyday.github.io/Pidilang/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-500 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition">Visit Pidilang Docs</a>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="p-10 glass rounded-3xl border-t border-blue-500/30">
                         <h4 class="text-2xl font-black uppercase mb-4 tracking-tight">Renewable Energy</h4>
-                        <p class="opacity-70">
-                            Harnessing the potential of electricity in ways that matter. We focus on self-sustaining power to ensure the future we build is as immune to failure as possible.
-                        </p>
+                        <p class="opacity-70">Harnessing the potential of electricity in ways that matter. We focus on self-sustaining power to ensure the future we build is as immune to failure as possible.</p>
                     </div>
                     <div class="p-10 glass rounded-3xl border-t border-blue-500/30">
                         <h4 class="text-2xl font-black uppercase mb-4 tracking-tight">Mind Over Qualification</h4>
-                        <p class="opacity-70">
-                            We believe in the gift of the mind. Schools don't define capability; creation does. FRiO is a home for those who build because they must, not because they were told to.
-                        </p>
+                        <p class="opacity-70">We believe in the gift of the mind. Schools don't define capability; creation does. FRiO is a home for those who build because they must.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap-section">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter">SYSTEM <span class="text-blue-500">STATUS</span></h2>
+            
+            <div class="grid grid-cols-1 gap-6">
+                <div class="p-8 glass rounded-3xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-xl font-bold uppercase tracking-widest">Project: Robotic Avatar</h4>
+                        <span class="text-blue-500 font-mono">65% ACTIVE</span>
+                    </div>
+                    <div class="progress-container mb-6">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                    <ul class="text-sm opacity-60 flex flex-col gap-2 font-mono">
+                        <li>> [SUCCESS] Limb articulation kinematics locked.</li>
+                        <li>> [PENDING] Haptic feedback bridge optimization.</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 glass rounded-3xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-xl font-bold uppercase tracking-widest">Project: Pidilang</h4>
+                        <span class="text-blue-400 font-mono">40% DEPLOYED</span>
+                    </div>
+                    <div class="progress-container mb-6">
+                        <div class="progress-fill" style="width: 40%"></div>
+                    </div>
+                    <ul class="text-sm opacity-60 flex flex-col gap-2 font-mono">
+                        <li>> [SUCCESS] Core syntax interpreter finished.</li>
+                        <li>> [ACTIVE] Local language mapping (Phase 2).</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 glass rounded-3xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-xl font-bold uppercase tracking-widest">Project: Energy Labs</h4>
+                        <span class="text-blue-300 font-mono">25% INITIALIZED</span>
+                    </div>
+                    <div class="progress-container mb-6">
+                        <div class="progress-fill" style="width: 25%"></div>
+                    </div>
+                    <ul class="text-sm opacity-60 flex flex-col gap-2 font-mono">
+                        <li>> [SUCCESS] Prototype solar-thermal collector tested.</li>
+                        <li>> [PENDING] High-density solid state storage blueprints.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -250,11 +294,10 @@
         }
 
         function toggleDrawer() {
-            const dr = document.getElementById('drawer');
-            dr.classList.toggle('open');
+            document.getElementById('drawer').classList.toggle('open');
         }
 
         updateSlides();
     </script>
 </body>
-        </html>
+    </html>
