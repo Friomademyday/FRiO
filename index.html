@@ -20,14 +20,30 @@
             padding: 100px 0;
         }
 
-        #bg-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #000; overflow: hidden; }
+        #bg-container { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: -1; 
+            background: #000; 
+            overflow: hidden; 
+        }
         
         .bg-slide {
-            position: absolute; inset: 0; background-size: cover; background-position: center;
-            opacity: 0; transition: opacity 2s ease-in-out;
+            position: absolute; 
+            inset: 0; 
+            background-size: cover; 
+            background-position: center;
+            opacity: 0; 
+            transition: opacity 2s ease-in-out;
         }
 
-        .bg-slide.active { opacity: 1; animation: fadeZoomOut 8s ease-in-out forwards; }
+        .bg-slide.active { 
+            opacity: 1; 
+            animation: fadeZoomOut 8s ease-in-out forwards; 
+        }
 
         @keyframes fadeZoomOut {
             0% { transform: scale(1); opacity: 0; }
@@ -36,7 +52,12 @@
             100% { transform: scale(1.1); opacity: 0; }
         }
 
-        #bg-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6); z-index: 1; }
+        #bg-overlay { 
+            position: absolute; 
+            inset: 0; 
+            background: rgba(0, 0, 0, 0.6); 
+            z-index: 1; 
+        }
 
         .glass { backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .hero-title { font-size: clamp(2.5rem, 8vw, 7rem); line-height: 0.9; font-weight: 800; letter-spacing: -0.04em; }
@@ -71,10 +92,10 @@
         #manifesto-section, #roadmap-section {
             position: relative;
             z-index: 10;
-            padding: 80px 24px;
+            padding: 120px 24px;
+            min-height: 100vh;
         }
 
-        /* Technical Bridge Animation */
         .tech-ticker {
             width: 100%;
             overflow: hidden;
@@ -101,11 +122,10 @@
         #drawer { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); transform: translateX(100%); z-index: 100; }
         #drawer.open { transform: translateX(0); }
 
-        /* CIRCLE PROGRESS BAR */
         .progress-container { 
-            background: rgba(255,255,255,0.05); 
+            background: rgba(255,255,255,0.1); 
             border-radius: 99px; 
-            height: 4px; 
+            height: 6px; 
             width: 100%; 
             position: relative;
             margin: 20px 0;
@@ -115,14 +135,15 @@
             height: 100%; 
             position: relative;
             transition: width 1.5s ease-in-out;
+            border-radius: 99px;
         }
         .progress-circle {
             position: absolute;
             right: -6px;
             top: 50%;
             transform: translateY(-50%);
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             background: #3b82f6;
             border-radius: 50%;
             box-shadow: 0 0 10px #3b82f6;
@@ -252,18 +273,9 @@
                         </div>
                     </div>
                     <ul class="text-sm opacity-60 flex flex-col gap-3 mt-4">
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                            Skeleton frame assembly complete.
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                            Basic actuator testing initiated.
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                            Manual control bridge in testing phase.
-                        </li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Skeleton frame assembly complete.</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Basic actuator testing initiated.</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Manual control bridge in testing phase.</li>
                     </ul>
                 </div>
 
@@ -278,14 +290,8 @@
                         </div>
                     </div>
                     <ul class="text-sm opacity-60 flex flex-col gap-3 mt-4">
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
-                            Lexer logic mapping started.
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
-                            Keyword reservation for local syntax in progress.
-                        </li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span> Lexer logic mapping started.</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span> Keyword reservation for local syntax in progress.</li>
                     </ul>
                 </div>
 
@@ -300,14 +306,8 @@
                         </div>
                     </div>
                     <ul class="text-sm opacity-60 flex flex-col gap-3 mt-4">
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-blue-300 rounded-full"></span>
-                            Theoretical research for clean storage models.
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="w-1.5 h-1.5 bg-blue-300 rounded-full"></span>
-                            Initial drafting of low-loss transmission systems.
-                        </li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-300 rounded-full"></span> Theoretical research for clean storage models.</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-300 rounded-full"></span> Initial drafting of low-loss transmission systems.</li>
                     </ul>
                 </div>
             </div>
@@ -318,17 +318,23 @@
         <button onclick="toggleDrawer()" class="self-end text-3xl mb-8 text-white hover:text-blue-500 transition">✕</button>
         <div class="text-white">
             <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter">Contact FR<span class="text-blue-500">i</span>O</h2>
-            <form id="frio-form" action="https://formspree.io/f/mkooopwj" method="POST" class="flex flex-col gap-6">
-                <div class="flex flex-col gap-2">
-                    <label class="text-[10px] uppercase tracking-widest text-blue-500 font-bold">Identification</label>
-                    <input type="text" name="name" placeholder="Full Name" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition">
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label class="text-[10px] uppercase tracking-widest text-blue-500 font-bold">Communication</label>
-                    <input type="email" name="email" placeholder="Email Address" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition">
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label class="text-[10px] uppercase tracking-widest text-blue-500 font-bold">The Vision</label>
-                    <textarea name="vision" placeholder="Describe your technical contribution..." rows="5" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition resize-none"></textarea>
-                </div>
-                <button type="submit" class="bg-blue-600 text-white py-5 rounded-2xl font-bold uppercase tracking-wides
+            <form action="https://formspree.io/f/mkooopwj" method="POST" class="flex flex-col gap-6">
+                <input type="text" name="name" placeholder="Full Name" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition">
+                <input type="email" name="email" placeholder="Email Address" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition">
+                <textarea name="vision" placeholder="Describe your technical contribution..." rows="5" required class="bg-white/5 border-b border-white/20 p-4 outline-none focus:border-blue-500 transition resize-none"></textarea>
+                <button type="submit" class="bg-blue-600 text-white py-5 rounded-2xl font-bold uppercase tracking-widest hover:bg-blue-500 transition">Transmit Data</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const darkImages = ['https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2000','https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000','https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000'];
+        const lightImages = ['https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000','https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2000','https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2000'];
+        let currentIdx = 0;
+
+        function updateSlides() {
+            const isDark = document.body.classList.contains('dark');
+            const set = isDark ? darkImages : lightImages;
+            const wrapper = document.getElementById('slides-wrapper');
+            wrapper.innerHTML = '';
+    
