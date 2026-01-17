@@ -48,6 +48,9 @@
         #drawer.open { transform: translateX(0); }
         #success-message { display: none; }
         #success-message.active { display: flex; }
+
+        .vision-card { transition: transform 0.4s ease; border-top: 1px solid rgba(59, 130, 246, 0.3); }
+        .vision-card:hover { transform: translateY(-10px); background: rgba(59, 130, 246, 0.05); }
     </style>
 </head>
 <body class="dark">
@@ -70,26 +73,61 @@
     <main class="relative pt-32 md:pt-48 px-6 lg:px-24">
         <section class="min-h-screen flex flex-col justify-center">
             <div class="max-w-6xl">
-                <h1 class="hero-title mb-8">WE BUILD <br><span class="text-glow uppercase">THE FUTURE.</span></h1>
-                <p class="text-lg md:text-3xl max-w-2xl mb-12 leading-tight font-light italic">"The only way to predict the future is to create it."</p>
+                <h1 class="hero-title mb-8 uppercase">Harnessing <br><span class="text-glow">The Gift.</span></h1>
+                <p class="text-lg md:text-3xl max-w-3xl mb-12 leading-tight font-light italic">"We don't care about your qualifications. We care about your mind. Perfection is an illusion—FRiO is the reality."</p>
                 <div class="flex flex-col md:flex-row gap-4">
-                    <button onclick="toggleDrawer()" class="bg-blue-600 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition">Join the Team</button>
-                    <a href="#details" class="glass text-center px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white/10 transition">Explore Specs</a>
+                    <button onclick="toggleDrawer()" class="bg-blue-600 text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition">Connect with FRiO</button>
+                    <a href="#vision-anchor" class="glass text-center px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white/10 transition">Explore The Vision</a>
                 </div>
             </div>
 
             <div id="details" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-32 pb-24">
                 <div class="glass p-8 rounded-3xl">
-                    <h3 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">Linux Systems</h3>
-                    <p class="text-lg font-medium">OS Architecture & Kernel Optimization.</p>
+                    <h3 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">Electricity</h3>
+                    <p class="text-lg font-medium">Harnessing the unusable into the usable.</p>
                 </div>
                 <div class="glass p-8 rounded-3xl">
-                    <h3 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">Hardware</h3>
-                    <p class="text-lg font-medium">Robotics & Microcontroller Precision.</p>
+                    <h3 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">Avatar Project</h3>
+                    <p class="text-lg font-medium">Telemotic humanoid systems in creation.</p>
                 </div>
                 <div class="glass p-8 rounded-3xl">
-                    <h3 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">The Mission</h3>
-                    <p class="text-lg font-medium">Creating the physical tools for 2026.</p>
+                    <h3 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">The Mind</h3>
+                    <p class="text-lg font-medium">Gifted creators over qualified graduates.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision-anchor" class="min-h-screen py-24">
+            <div class="max-w-5xl">
+                <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter">THE <span class="text-blue-500">MANIFESTO</span></h2>
+                
+                <div class="grid grid-cols-1 gap-8">
+                    <div class="vision-card p-10 glass rounded-3xl">
+                        <h4 class="text-3xl font-black uppercase mb-4 tracking-tight">The Telemotic Avatar</h4>
+                        <p class="text-gray-400 text-lg leading-relaxed">
+                            Currently in development by the FRiO founder. A robotic system built from the ground up, designed to be controlled by the precision of a gamepad. This is the first step in bridging the gap between human intent and mechanical execution.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="vision-card p-10 glass rounded-3xl">
+                            <h4 class="text-2xl font-black uppercase mb-4 tracking-tight">Renewable Energy</h4>
+                            <p class="text-gray-400">
+                                We are looking into the vast potential of electricity. Our goal is to create self-sustaining power systems that allow our technology to reach places traditional energy cannot sustain.
+                            </p>
+                        </div>
+                        <div class="vision-card p-10 glass rounded-3xl">
+                            <h4 class="text-2xl font-black uppercase mb-4 tracking-tight">Minds Over Maps</h4>
+                            <p class="text-gray-400">
+                                Your school, your degree, and your background are irrelevant here. We believe bright minds are often found outside the classroom. FRiO is a home for those who were gifted by nature, not by a syllabus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-20 p-10 border border-blue-600/30 rounded-3xl bg-blue-600/5 text-center">
+                    <h3 class="text-2xl font-bold uppercase mb-4">Are you a like mind?</h3>
+                    <button onclick="toggleDrawer()" class="text-blue-500 font-black uppercase tracking-[0.3em] hover:text-white transition">Submit your vision →</button>
                 </div>
             </div>
         </section>
@@ -108,7 +146,7 @@
                 </div>
                 <div>
                     <label class="text-[10px] uppercase font-bold text-blue-500">Current Role / Expertise</label>
-                    <input type="text" name="role" placeholder="e.g. Embedded Systems Engineer" required class="w-full bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500 transition">
+                    <input type="text" name="role" placeholder="e.g. Creator / Developer" required class="w-full bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500 transition">
                 </div>
                 <div>
                     <label class="text-[10px] uppercase font-bold text-blue-500">Biggest Project Worked On</label>
@@ -116,7 +154,7 @@
                 </div>
                 <div>
                     <label class="text-[10px] uppercase font-bold text-blue-500">Project Link / Portfolio</label>
-                    <input type="url" name="link" placeholder="https://github.com/..." required class="w-full bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500 transition">
+                    <input type="url" name="link" placeholder="https://..." required class="w-full bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500 transition">
                 </div>
                 <div>
                     <label class="text-[10px] uppercase font-bold text-blue-500">Active Email</label>
@@ -132,7 +170,7 @@
 
         <div id="success-message" class="flex-col items-center justify-center text-center h-full">
             <h2 class="text-3xl font-black mb-4 uppercase">TRANSMISSION SENT</h2>
-            <p class="text-gray-400">Thank you for reaching out to FRiO. You'll be notified within 6-7 business days.</p>
+            <p class="text-gray-400 text-sm">Thank you for reaching out to FRiO. We will be in touch with fellow creators shortly.</p>
             <button onclick="toggleDrawer()" class="mt-8 text-blue-500 font-bold uppercase text-xs">Close</button>
         </div>
     </div>
@@ -205,8 +243,6 @@
                 document.getElementById('success-message').classList.add('active');
             }
         };
-
-        console.log("%c[FRiO SYSTEM INITIALIZED]", "color: #3b82f6; font-size: 20px; font-weight: bold;");
     </script>
 </body>
-</html>
+    </html>
