@@ -12,11 +12,12 @@
         
         #hero-section {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding-bottom: 100px;
         }
 
         #bg-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #000; overflow: hidden; }
@@ -51,7 +52,6 @@
             z-index: 10;
             padding: 100px 24px;
             min-height: 100vh;
-            /* This creates the 'solid floor' look as you scroll */
             box-shadow: 0 -20px 50px rgba(0,0,0,0.5);
         }
         body.dark #manifesto-section { background: #000; }
@@ -79,7 +79,7 @@
             <div id="slides-wrapper"></div>
         </div>
 
-        <div class="relative z-10 px-6 lg:px-24">
+        <div class="relative z-10 px-6 lg:px-24 pt-32">
             <div class="max-w-6xl">
                 <h1 class="hero-title mb-8 uppercase text-white">WE BUILD <br><span class="text-glow">THE FUTURE.</span></h1>
                 <p class="text-lg md:text-3xl max-w-2xl mb-12 leading-tight font-light italic text-white/90">"The only way to predict the future is to create it."</p>
@@ -89,11 +89,36 @@
                     <a href="#manifesto-section" class="glass text-center text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white/10 transition">Explore Specs</a>
                 </div>
 
-                <div class="flex flex-wrap gap-3">
-                    <button class="px-5 py-2 glass rounded-full text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white transition">The Avatar</button>
-                    <button class="px-5 py-2 glass rounded-full text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white transition">Energy Labs</button>
-                    <button class="px-5 py-2 glass rounded-full text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white transition">Kernel OS</button>
-                    <button class="px-5 py-2 glass rounded-full text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white transition">Hardware</button>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass p-8 rounded-3xl text-white">
+                        <h3 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">Linux Systems</h3>
+                        <p class="text-lg font-medium">OS Architecture & Kernel Optimization.</p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl text-white">
+                        <h3 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">Hardware</h3>
+                        <p class="text-lg font-medium">Robotics & Microcontroller Precision.</p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl text-white">
+                        <h3 class="text-blue-500 font-bold mb-2 uppercase text-xs tracking-widest">The Mission</h3>
+                        <p class="text-lg font-medium">Creating the physical tools for 2026.</p>
+                    </div>
+
+                    <div class="glass p-8 rounded-3xl text-white">
+                        <h3 class="text-blue-400 font-bold mb-2 uppercase text-xs tracking-widest">Kinematics</h3>
+                        <p class="text-lg font-medium">Mechanics relating to motion & physics.</p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl text-white">
+                        <h3 class="text-blue-400 font-bold mb-2 uppercase text-xs tracking-widest">Electronics</h3>
+                        <p class="text-lg font-medium">Electrical component understanding.</p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl text-white">
+                        <h3 class="text-blue-400 font-bold mb-2 uppercase text-xs tracking-widest">Blueprints</h3>
+                        <p class="text-lg font-medium">Technical drawing & system design.</p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl text-white">
+                        <h3 class="text-blue-400 font-bold mb-2 uppercase text-xs tracking-widest">3D Modeling</h3>
+                        <p class="text-lg font-medium">3D design & Simulation environments.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -134,10 +159,10 @@
         <div class="text-white">
             <h2 class="text-3xl font-black mb-8 uppercase tracking-tighter">Contact FR<span class="text-blue-500">i</span>O</h2>
             <form id="frio-form" action="https://formspree.io/f/mkooopwj" method="POST" class="flex flex-col gap-5">
-                <input type="text" name="name" placeholder="Full Name" required class="bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500">
-                <input type="email" name="email" placeholder="Email" required class="bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500">
-                <textarea name="vision" placeholder="Your Vision" rows="4" required class="bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500 resize-none"></textarea>
-                <button type="submit" class="bg-blue-600 text-white py-4 rounded-xl font-bold uppercase tracking-widest">Transmit Data</button>
+                <input type="text" name="name" placeholder="Full Name" required class="bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500 transition">
+                <input type="email" name="email" placeholder="Email" required class="bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500 transition">
+                <textarea name="vision" placeholder="Your Vision" rows="4" required class="bg-white/5 border-b border-white/20 p-3 outline-none focus:border-blue-500 transition resize-none"></textarea>
+                <button type="submit" class="bg-blue-600 text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-blue-500 transition">Transmit Data</button>
             </form>
         </div>
     </div>
