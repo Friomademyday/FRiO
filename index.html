@@ -3,182 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuantumFlow - Future Systems</title>
+    <title>FRiO | Robotics & Engineering</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: #0a0a0a;
-            color: white;
-            overflow-x: hidden;
-        }
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #0a0a0a;
-            z-index: -1;
-            top: 0;
-            left: 0;
-        }
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.4);
-        }
-        .bento-grid-item {
-            @apply glass-card p-6 flex flex-col justify-between;
-        }
-        .animated-gradient-text {
-            background: linear-gradient(45deg, #00C6FF, #0072FF, #8E44AD, #C0392B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 400% 400%;
-            animation: gradient-shift 8s ease infinite;
-        }
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #e5e5e5; overflow-x: hidden; }
+        .mono { font-family: 'Space Mono', monospace; }
+        #particles-js { position: absolute; width: 100%; height: 100%; z-index: -1; top: 0; left: 0; opacity: 0.4; }
+        .glass-card { background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 2px; transition: all 0.3s ease; }
+        .glass-card:hover { border-color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.1); }
+        .scanline { width: 100%; height: 2px; background: rgba(59, 130, 246, 0.1); position: absolute; animation: scan 4s linear infinite; z-index: 50; pointer-events: none; }
+        @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
+        .hero-text { font-weight: 900; letter-spacing: -0.05em; text-transform: uppercase; }
+        .border-glow { border-left: 4px solid #3b82f6; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
-
+<body>
+    <div class="scanline"></div>
     <div id="particles-js"></div>
 
-    <header class="glass-nav py-4 px-6 md:px-12">
-        <nav class="flex justify-between items-center max-w-7xl mx-auto">
-            <div class="text-2xl font-bold text-blue-400 tracking-wider">QUANTUMFLOW</div>
-            <ul class="hidden md:flex space-x-8 text-gray-300">
-                <li><a href="#" class="hover:text-blue-400 transition-colors">Solutions</a></li>
-                <li><a href="#" class="hover:text-blue-400 transition-colors">Innovations</a></li>
-                <li><a href="#" class="hover:text-blue-400 transition-colors">About</a></li>
-                <li><a href="#" class="hover:text-blue-400 transition-colors">Contact</a></li>
-            </ul>
-            <button class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
+    <header class="p-6 flex justify-between items-center max-w-7xl mx-auto relative z-10">
+        <div class="text-3xl font-black tracking-tighter">FRiO<span class="text-blue-600">_</span></div>
+        <div class="mono text-xs text-blue-500 hidden md:block uppercase tracking-widest">Status: Research & Development Phase</div>
     </header>
 
-    <main class="relative z-10 flex-grow">
-        <section class="min-h-[calc(100vh-80px)] flex items-center justify-center p-6 text-center">
-            <div class="glass-card p-8 md:p-16 max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight animated-gradient-text">
-                    Pioneering Tomorrow's Digital Realms
+    <main class="relative z-10">
+        <section class="min-h-[80vh] flex flex-col justify-center px-6 max-w-7xl mx-auto">
+            <div class="max-w-4xl">
+                <p class="mono text-blue-500 mb-4 tracking-widest">// ELECTRICAL ENGINEERING & ROBOTICS</p>
+                <h1 class="text-6xl md:text-9xl hero-text mb-8 leading-[0.9]">
+                    Create the <span class="text-transparent" style="-webkit-text-stroke: 1px white;">Future.</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                    QuantumFlow redefines connectivity and intelligence through adaptive, future-proof systems.
-                </p>
-                <button class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Explore Quantum Solutions
-                </button>
+                <blockquote class="border-glow pl-6 mb-12">
+                    <p class="text-xl md:text-2xl italic text-gray-400">"The only way to predict the future is to create it."</p>
+                </blockquote>
+                <div class="flex gap-4">
+                    <a href="#careers" class="bg-blue-600 hover:bg-blue-700 text-white mono text-sm px-8 py-4 transition-all uppercase font-bold">Join the Collective</a>
+                    <a href="#tech" class="border border-white/10 hover:bg-white/5 text-white mono text-sm px-8 py-4 transition-all uppercase">Our Stack</a>
+                </div>
             </div>
         </section>
 
-        <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-blue-400">Our Core Innovations</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bento-grid-item">
-                    <h3 class="text-2xl font-bold mb-3 text-blue-300">Adaptive AI Networks</h3>
-                    <p class="text-gray-400 flex-grow">
-                        Intelligent systems that learn, evolve, and optimize operations in real-time.
-                    </p>
-                    <a href="#" class="mt-4 text-blue-400 hover:text-blue-300 transition-colors flex items-center">
-                        Learn More
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
+        <section id="careers" class="py-20 px-6 max-w-7xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-4xl font-black uppercase mb-2">Recruitment_Protocol</h2>
+                <p class="mono text-blue-500">Targeting high-skill operatives for the next generation of hardware.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-8">
+                    <div class="text-blue-500 mono mb-4">01. OS ARCHITECTS</div>
+                    <h3 class="text-xl font-bold mb-4">Linux Systems</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Optimization of kernel-level processes for real-time robotic response. If you live in the terminal, we want you.</p>
                 </div>
-                
-                <div class="bento-grid-item">
-                    <h3 class="text-2xl font-bold mb-3 text-purple-300">Decentralized Data Streams</h3>
-                    <p class="text-gray-400 flex-grow">
-                        Secure, transparent, and immutable data architecture for the next generation.
-                    </p>
-                    <a href="#" class="mt-4 text-purple-400 hover:text-purple-300 transition-colors flex items-center">
-                        Learn More
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
+
+                <div class="glass-card p-8 border-blue-500/50">
+                    <div class="text-blue-500 mono mb-4">02. SILICON WHISPERERS</div>
+                    <h3 class="text-xl font-bold mb-4">Microcontrollers</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Firmware development for ARM, ESP32, and custom PCB architectures. Low-latency is our religion.</p>
                 </div>
-                
-                <div class="bento-grid-item md:col-span-2 lg:col-span-1">
-                    <h3 class="text-2xl font-bold mb-3 text-green-300">Quantum-Proof Security</h3>
-                    <p class="text-gray-400 flex-grow">
-                        Advanced encryption protocols designed to withstand future computational threats.
-                    </p>
-                    <a href="#" class="mt-4 text-green-400 hover:text-green-300 transition-colors flex items-center">
-                        Learn More
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
+
+                <div class="glass-card p-8">
+                    <div class="text-blue-500 mono mb-4">03. HARDWARE OPS</div>
+                    <h3 class="text-xl font-bold mb-4">Robotics Eng.</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Mechanical design meeting electrical precision. Building the physical shells for future intelligence.</p>
                 </div>
-                
-                <div class="bento-grid-item lg:col-span-2">
-                    <h3 class="text-3xl font-bold mb-3 text-orange-300">Synergistic User Interfaces</h3>
-                    <p class="text-gray-400 text-lg flex-grow">
-                        Intuitive and immersive interfaces that adapt to user behavior and preferences.
+            </div>
+        </section>
+
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+            <div class="glass-card p-1 bg-gradient-to-r from-blue-900/20 to-transparent">
+                <div class="bg-[#050505] p-10">
+                    <h2 class="mono text-2xl mb-6 font-bold tracking-tighter">> FRiO_Venture_Manifesto:</h2>
+                    <p class="text-gray-400 max-w-3xl leading-relaxed">
+                        We don't build apps. We build machines. FRiO is a foundry for those who understand that the real frontier isn't digital—it's the intersection of code and physical reality. We are currently scouting for founders and engineers who aren't afraid of a soldering iron and a Linux bash prompt.
                     </p>
-                    <a href="#" class="mt-6 text-orange-400 hover:text-orange-300 transition-colors flex items-center">
-                        Explore UI/UX Innovations
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="glass-nav py-8 mt-16">
-        <div class="max-w-7xl mx-auto text-center text-gray-500">
-            <p>&copy; 2026 QuantumFlow. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-blue-400 transition-colors">Terms of Service</a>
-            </div>
-        </div>
+    <footer class="p-10 border-t border-white/5 text-center mono text-[10px] text-gray-600 uppercase tracking-[0.5em]">
+        &copy; 2026 FRiO Robotics // All Systems Operational
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
         particlesJS('particles-js', {
             "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#00C6FF" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": false },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#0072FF", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "grab" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": { "distance": 180, "line_linked": { "opacity": 1 } },
-                    "push": { "particles_nb": 4 }
-                }
+                "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#3b82f6" },
+                "shape": { "type": "edge" },
+                "opacity": { "value": 0.3 },
+                "size": { "value": 2 },
+                "line_linked": { "enable": true, "distance": 150, "color": "#3b82f6", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 1, "direction": "top", "random": true }
             },
             "retina_detect": true
         });
     </script>
 </body>
-  </html>
+</html>
